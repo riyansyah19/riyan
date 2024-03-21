@@ -1,0 +1,996 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>memahami data &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'memahami data';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Notebooks with MyST Markdown" href="markdown-notebooks.html" />
+    <link rel="prev" title="Content with notebooks" href="notebooks.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">memahami data</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmemahami data.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/memahami data.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>memahami data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">memahami data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengumpulkan-data">Mengumpulkan Data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membuat-database-cloud-di-aiven">membuat database cloud di aiven</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mengumpulkan-data-di-mysql-dan-postgres">mengumpulkan data di mysql dan postgres</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fitur-fitur-pada-iris">fitur fitur pada iris</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#species">Species</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-missing-value">implementasi missing value</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-missing-value">pengertian missing value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menggunakan-rata-rata">menggunakan rata rata</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menggunakan-knn">menggunakan knn</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-knn">pengertian knn</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proses-mencari-missing-value-metode-knn">proses mencari missing value metode knn</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-outlier-lokal-outlier-factor">Deteksi Outlier (lokal Outlier Factor)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konseplokal-outlier-faktor">konseplokal outlier faktor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-manual-lokal-outlier-factor">menghitung manual lokal Outlier Factor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-menggunakan-python-scikit-learn">menghitung menggunakan python (Scikit Learn)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-local-outlier-factor-pada-data-iris">Implementasi local outlier factor pada data iris</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-integration">Data integration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="memahami-data">
+<h1>memahami data<a class="headerlink" href="#memahami-data" title="Link to this heading">#</a></h1>
+<p>1.Tipe Data:
+atribut numerik pada dataset Iris diukur dalam bentuk bilangan desimal (misalnya, milimeter). Beberapa implementasi mungkin menggunakan tipe data floating point untuk merepresentasikan nilai-nilai ini.</p>
+<ol class="arabic simple" start="2">
+<li><p>Jumlah Baris:
+Dataset Iris klasik terdiri dari 150 baris, di mana masing-masing baris mewakili satu bunga iris yang diamati.</p></li>
+</ol>
+<ol class="arabic simple" start="3">
+<li><p>Jumlah Kolom:
+Terdapat 5 kolom pada dataset Iris:
+Sepal Length (Panjang Kelopak)
+Sepal Width (Lebar Kelopak)
+Petal Length (Panjang Mahkota)
+Petal Width (Lebar Mahkota)
+Species (Spesies)</p></li>
+</ol>
+<ol class="arabic simple" start="4">
+<li><p>Nama Tabel:
+Meskipun tidak selalu disajikan dalam format tabel, dataset ini dikenal dengan nama “Iris” atau “Iris Flower Dataset.”</p></li>
+</ol>
+<ol class="arabic simple" start="5">
+<li><p>Jelaskan Iris:
+Iris adalah genus tanaman bunga yang mencakup banyak spesies. Dalam konteks dataset Iris, fokusnya adalah pada tiga spesies iris tertentu: setosa, versicolor, dan virginica. Setiap spesies memiliki karakteristik morfologis unik yang tercermin dalam dataset.</p></li>
+</ol>
+<ol class="arabic simple" start="6">
+<li><p>Jelaskan Fitur Iris:
+Setiap fitur pada dataset memberikan informasi tentang karakteristik morfologis bunga iris:
+Sepal Length (Panjang Kelopak): Panjang dari daun pelindung bunga iris.
+Sepal Width (Lebar Kelopak): Lebar dari daun pelindung bunga iris.
+Petal Length (Panjang Mahkota): Panjang dari daun bunga bagian dalam.
+Petal Width (Lebar Mahkota): Lebar dari daun bunga bagian dalam.</p></li>
+</ol>
+<p>Tujuan utama dari dataset ini adalah untuk menggunakan fitur-fitur ini sebagai input untuk model pembelajaran mesin guna mengklasifikasikan spesies iris berdasarkan ciri-ciri morfologis yang diukur.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="mengumpulkan-data">
+<h1>Mengumpulkan Data<a class="headerlink" href="#mengumpulkan-data" title="Link to this heading">#</a></h1>
+<section id="membuat-database-cloud-di-aiven">
+<h2>membuat database cloud di aiven<a class="headerlink" href="#membuat-database-cloud-di-aiven" title="Link to this heading">#</a></h2>
+<section id="mengumpulkan-data-di-mysql-dan-postgres">
+<h3>mengumpulkan data di mysql dan postgres<a class="headerlink" href="#mengumpulkan-data-di-mysql-dan-postgres" title="Link to this heading">#</a></h3>
+<p>Mengumpulkan data dengan efektif dalam proses data mining adalah langkah penting untuk memastikan hasil analisis yang akurat dan signifikan. Berikut adalah langkah-langkah kunci yang dapat diambil untuk mengumpulkan data secara efektif:</p>
+<ol class="arabic simple">
+<li><p>Menetapkan Tujuan: Jelaskan dengan jelas tujuan analisis data. Apakah Anda mencari pola, tren, atau hubungan antar variabel? Menetapkan tujuan yang jelas akan membimbing seluruh proses pengumpulan data.</p></li>
+</ol>
+<ol class="arabic simple" start="2">
+<li><p>Mengidentifikasi Sumber Data: Tentukan sumber data yang relevan dengan tujuan analisis Anda. Sumber data bisa berasal dari berbagai sumber seperti database internal perusahaan, data publik online, atau bahkan data dari sensor atau perangkat IoT.</p></li>
+</ol>
+<ol class="arabic simple" start="3">
+<li><p>Memilih Variabel yang Relevan: Identifikasi variabel yang relevan dengan tujuan analisis. Pastikan data yang dikumpulkan mencakup semua variabel yang diperlukan untuk analisis yang komprehensif.</p></li>
+</ol>
+<ol class="arabic simple" start="4">
+<li><p>Mengevaluasi Kualitas Data: Periksa kualitas data yang akan digunakan. Pastikan data tersebut lengkap, konsisten, dan tidak mengandung banyak nilai yang hilang atau outlier yang dapat memengaruhi hasil analisis.</p></li>
+</ol>
+<ol class="arabic simple" start="5">
+<li><p>Melakukan Pra-pemrosesan Data: Lakukan pra-pemrosesan data untuk membersihkan dan mempersiapkannya sebelum digunakan dalam algoritma data mining. Pra-pemrosesan bisa mencakup langkah-langkah seperti penghapusan duplikat, penanganan nilai yang hilang, normalisasi, atau transformasi data.</p></li>
+</ol>
+<ol class="arabic simple" start="6">
+<li><p>Menggunakan Teknik Sampling yang Tepat: Jika data Anda terlalu besar, pertimbangkan untuk menggunakan teknik sampling untuk mengambil sampel yang representatif dari populasi data. Pastikan sampel yang diambil mencerminkan variasi yang ada dalam populasi sebenarnya.</p></li>
+</ol>
+<ol class="arabic simple" start="7">
+<li><p>Memperhatikan Etika dan Privasi: Penting untuk mematuhi aturan dan kebijakan privasi yang berlaku dalam pengumpulan dan penggunaan data. Hindari pengumpulan atau penggunaan data yang melanggar privasi individu atau organisasi.</p></li>
+</ol>
+</section>
+<section id="fitur-fitur-pada-iris">
+<h3>fitur fitur pada iris<a class="headerlink" href="#fitur-fitur-pada-iris" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Panjang Sepal (Sepal Length): Ini mengacu pada panjang bagian kelopak bunga yang umumnya berfungsi sebagai pelindung bunga saat mekar. Ukuran ini diukur dalam sentimeter (cm).</p></li>
+<li><p>Lebar Sepal (Sepal Width): Ini merujuk pada lebar bagian kelopak bunga. Ukurannya juga dinyatakan dalam sentimeter (cm).</p></li>
+<li><p>Panjang Petal (Petal Length): Ini adalah panjang bagian bunga yang berwarna. Pengukurannya dilakukan dalam sentimeter (cm).</p></li>
+<li><p>Lebar Petal (Petal Width): Ini mengacu pada lebar bagian bunga yang berwarna. Seperti halnya dengan panjang, ukurannya diungkapkan dalam sentimeter (cm).</p></li>
+</ol>
+</section>
+<section id="species">
+<h3>Species<a class="headerlink" href="#species" title="Link to this heading">#</a></h3>
+<p>Setiap contoh data juga memiliki jenis spesiesnya sebagai target variabel. Spesies-spesies yang terdapat dalam dataset Iris meliputi:</p>
+<ol class="arabic simple">
+<li><p>Iris Setosa</p></li>
+<li><p>Iris Versicolor</p></li>
+<li><p>Iris Virginica</p></li>
+</ol>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="implementasi-missing-value">
+<h1>implementasi missing value<a class="headerlink" href="#implementasi-missing-value" title="Link to this heading">#</a></h1>
+<section id="pengertian-missing-value">
+<h2>pengertian missing value<a class="headerlink" href="#pengertian-missing-value" title="Link to this heading">#</a></h2>
+<p>Dalam praktik data mining, missing values merujuk pada keadaan di mana nilai atau entri dalam dataset tidak tersedia atau tidak terisi. Ini adalah situasi yang sering terjadi dalam pengumpulan data dan bisa disebabkan oleh berbagai faktor, termasuk kesalahan dalam pengumpulan data, ketidakakuratan pengukuran, atau kekurangan informasi.</p>
+<p>Pada pertemuan sebelumnya, telah dihapus beberapa data pada panjang kelopak sepal, sehingga kemungkinan terdapat missing value dalam dataset iris. Untuk mengatasi hal ini, ada dua pendekatan yang dapat dilakukan:</p>
+</section>
+<section id="menggunakan-rata-rata">
+<h2>menggunakan rata rata<a class="headerlink" href="#menggunakan-rata-rata" title="Link to this heading">#</a></h2>
+<p>Anda bisa mengatasi missing values dalam data dengan mengisi mereka menggunakan rata-rata dari kolom terkait. Berikut adalah langkah-langkah umum untuk menggunakan rata-rata dalam mengisi missing values:</p>
+<ol class="arabic simple">
+<li><p>Identifikasi Kolom yang Memiliki Missing Values: Periksa setiap kolom dalam dataset Anda untuk menentukan di mana missing values terdapat.</p></li>
+</ol>
+<ol class="arabic simple" start="2">
+<li><p>Hitung Mean (Rata-rata): Untuk setiap kolom yang memiliki missing values, hitung rata-rata dari nilai-nilai yang tersedia dalam kolom tersebut.</p></li>
+</ol>
+<ol class="arabic simple" start="3">
+<li><p>Isi Missing Values dengan Rata-rata: Ganti missing values dengan rata-rata yang telah dihitung sebelumnya.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_1</span> <span class="o">=</span> <span class="n">_deepnote_execute_sql</span><span class="p">(</span><span class="s1">&#39;select * from iris where species = </span><span class="se">\&#39;</span><span class="s1">iris-setosa</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;SQL_17297E53_5B5E_4BF6_BFBD_C13253D38AFB&#39;</span><span class="p">,</span> <span class="n">audit_sql_comment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">sql_cache_mode</span><span class="o">=</span><span class="s1">&#39;cache_disabled&#39;</span><span class="p">)</span>
+<span class="n">df_1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-1-efb847a7dcad&gt;</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_1</span> <span class="o">=</span> <span class="n">_deepnote_execute_sql</span><span class="p">(</span><span class="s1">&#39;select * from iris where species = </span><span class="se">\&#39;</span><span class="s1">iris-setosa</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;SQL_17297E53_5B5E_4BF6_BFBD_C13253D38AFB&#39;</span><span class="p">,</span> <span class="n">audit_sql_comment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">sql_cache_mode</span><span class="o">=</span><span class="s1">&#39;cache_disabled&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df_1</span>
+
+<span class="ne">NameError</span>: name &#39;_deepnote_execute_sql&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_2</span> <span class="o">=</span> <span class="n">_deepnote_execute_sql</span><span class="p">(</span><span class="s1">&#39;select avg(coalesce(SepalLengthCm,0)) as rata_s</span><span class="se">\n</span><span class="s1">from iris</span><span class="se">\n</span><span class="s1">group by species = </span><span class="se">\&#39;</span><span class="s1">iris-setosa</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;SQL_17297E53_5B5E_4BF6_BFBD_C13253D38AFB&#39;</span><span class="p">,</span> <span class="n">audit_sql_comment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">sql_cache_mode</span><span class="o">=</span><span class="s1">&#39;cache_disabled&#39;</span><span class="p">)</span>
+<span class="n">df_2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rata_s</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4.434</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>6.262</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="menggunakan-knn">
+<h2>menggunakan knn<a class="headerlink" href="#menggunakan-knn" title="Link to this heading">#</a></h2>
+<section id="pengertian-knn">
+<h3>pengertian knn<a class="headerlink" href="#pengertian-knn" title="Link to this heading">#</a></h3>
+<p>KNN (K-Nearest Neighbor) adalah salah satu algoritma dalam machine learning yang digunakan untuk melakukan klasifikasi pada data. Algoritma ini bekerja dengan mencari kategori terdekat dari data yang baru diberikan berdasarkan jarak euclidean atau jarak manhattan. Kategori yang dipilih adalah kategori yang paling banyak muncul di antara tetangga terdekat dari data yang baru diberikan.</p>
+<p>Rumus knn:</p>
+<p>Rumus dasar untuk algoritma K-Nearest Neighbors (KNN) melibatkan beberapa tahapan sebagai berikut:</p>
+<ol class="arabic simple">
+<li><p>Perhitungan Jarak: Tahap ini mencakup menghitung jarak antara titik data baru dengan setiap titik data dalam dataset. Berbagai metrik jarak seperti Euclidean, Manhattan, atau metrik kustom lainnya bisa digunakan tergantung pada kebutuhan dan preferensi masalah.</p></li>
+</ol>
+<ol class="arabic simple" start="2">
+<li><p>Penentuan Tetangga Terdekat: Setelah jarak dihitung, langkah selanjutnya adalah memilih K titik data dengan jarak terdekat dari titik data yang baru. Nilai K biasanya sudah ditentukan sebelumnya sebagai parameter dan merupakan bilangan bulat positif.</p></li>
+</ol>
+<ol class="arabic simple" start="3">
+<li><p>Proses Voting atau Pemilihan Mayoritas: Dalam konteks klasifikasi, setelah K tetangga terdekat ditemukan, dilakukan proses voting untuk menentukan kelas mayoritas di antara mereka. Untuk regresi, nilai target bisa berupa rata-rata atau median dari nilai K tetangga terdekat.</p></li>
+</ol>
+<ol class="arabic simple" start="4">
+<li><p>Memberikan Prediksi: Langkah terakhir adalah memberikan prediksi untuk titik data baru berdasarkan hasil dari proses voting atau nilai rata-rata/median dari tetangga terdekat, sesuai dengan jenis masalah (klasifikasi atau regresi).</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rumusknn</span> <span class="o">=</span> <span class="s1">&#39;file_input_uploads/Euclidean-distance-formula.png&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="proses-mencari-missing-value-metode-knn">
+<h2>proses mencari missing value metode knn<a class="headerlink" href="#proses-mencari-missing-value-metode-knn" title="Link to this heading">#</a></h2>
+<p>sebelum mencari kita melakukan penghapusan pada data iris kita agar kita bisa melakukan percobaan ini</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">UPDATE</span> <span class="n">iriskkn</span>
+<span class="n">SET</span> <span class="n">SepalLengthCm</span> <span class="o">=</span> <span class="n">NULL</span>
+<span class="n">WHERE</span> <span class="n">Id</span> <span class="n">IN</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>langkah pertama menginstall pymysql</p>
+<p>Dengan melakukan instalasi paket PyMySQL menggunakan perintah “pip install pymysql”, Anda dapat memanfaatkan fungsi-fungsi yang disediakan oleh PyMySQL untuk melakukan koneksi ke database MySQL, mengeksekusi query, serta melakukan berbagai operasi database lainnya langsung dari dalam skrip Python Anda.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pymysql</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pymysql in /shared-libs/python3.9/py/lib/python3.9/site-packages (1.0.2)
+<span class=" -Color -Color-Yellow">WARNING: Running pip as the &#39;root&#39; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv</span>
+
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.0.1</span> -&gt; <span class=" -Color -Color-Green">24.0</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">python -m pip install --upgrade pip</span>
+Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+</div>
+</div>
+<p>selanjutnya melakukan pengecekan apakah ada data yang bernilai null</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">pymysql</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;datamining1-muhtar22140.a.aivencloud.com&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">24703</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s1">&#39;avnadmin&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;AVNS_aK6n6H3LdnwcGKYslzc&#39;</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="s1">&#39;irissi&#39;</span><span class="p">)</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;SELECT Id, SepalLengthCm, SepalWidthCm, Species FROM iriskkn&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
+<span class="n">df_null</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_null</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_40/2135530759.py:9: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql_query(query, conn)
+    Id  SepalLengthCm  SepalWidthCm      Species
+2    3            NaN           3.2  Iris-setosa
+5    6            NaN           3.9  Iris-setosa
+9   10            NaN           3.1  Iris-setosa
+12  13            NaN           3.0  Iris-setosa
+15  16            NaN           4.4  Iris-setosa
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">KNNImputer</span>
+<span class="kn">import</span> <span class="nn">pymysql</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;datamining1-muhtar22140.a.aivencloud.com&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">24703</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s1">&#39;avnadmin&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;AVNS_aK6n6H3LdnwcGKYslzc&#39;</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="s1">&#39;irissi&#39;</span><span class="p">)</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;SELECT SepalLengthCm, SepalWidthCm, PetalLengthCm, PetalWidthCm FROM iriskkn&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">imputer</span> <span class="o">=</span> <span class="n">KNNImputer</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">df_imputed</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">imputer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_imputed</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_41/3785762783.py:11: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql_query(query, conn)
+     SepalLengthCm  SepalWidthCm  PetalLengthCm  PetalWidthCm
+0              5.1           3.5            1.4           0.2
+1              4.9           3.0            1.4           0.2
+2              4.6           3.2            1.3           0.2
+3              4.6           3.1            1.5           0.2
+4              5.0           3.6            1.4           0.2
+..             ...           ...            ...           ...
+145            6.7           3.0            5.2           2.3
+146            6.3           2.5            5.0           1.9
+147            6.5           3.0            5.2           2.0
+148            6.2           3.4            5.4           2.3
+149            5.9           3.0            5.1           1.8
+
+[150 rows x 4 columns]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="deteksi-outlier-lokal-outlier-factor">
+<h1>Deteksi Outlier (lokal Outlier Factor)<a class="headerlink" href="#deteksi-outlier-lokal-outlier-factor" title="Link to this heading">#</a></h1>
+<section id="konseplokal-outlier-faktor">
+<h2>konseplokal outlier faktor<a class="headerlink" href="#konseplokal-outlier-faktor" title="Link to this heading">#</a></h2>
+<p>Konsep Local Outlier Factor (LOF) adalah metode dalam deteksi anomali yang digunakan untuk mengidentifikasi titik data yang merupakan outlier berdasarkan tingkat kepadatan lokalnya. LOF membandingkan kepadatan titik data dengan kepadatan tetangga-tetangganya untuk menentukan apakah titik data tersebut anomali atau tidak.</p>
+<ol class="arabic simple">
+<li><p>K-neighbors: K-neighbors dari sebuah titik data adalah kumpulan dari k titik data terdekat ke titik tersebut. Dalam hal ini, “k” adalah parameter yang ditentukan sebelumnya. Jadi, jika kita memiliki sebuah titik data P dan kita ingin menentukan 5-neighbors dari P, maka kita akan mencari lima titik data terdekat dari P.</p></li>
+</ol>
+<img src="image-20240321-043201.png" width="" align="" /><ol class="arabic simple" start="2">
+<li><p>Reachability distance (RD)</p></li>
+</ol>
+<p>didefinisikan sebagai jarak K maksimum Xj dan jarak antara Xi dan Xj. Ukuran jarak bersifat khusus untuk masalah (Euclidean, Manhattan, dll.)</p>
+<img src="image-20240321-043222.png" width="" align="" /><ol class="arabic simple" start="3">
+<li><p>Local reachability density (LRD) adalah kebalikan dari rata-rata jarak jangkauan A dari tetangga-tetangganya. Semakin besar jarak jangkauan rata-ratanya (yaitu, tetangga-tetangga yang jauh dari titik tersebut), semakin sedikit kepadatan titik yang ada di sekitar titik tertentu. Ini mengindikasikan seberapa jauh suatu titik dari kelompok titik terdekatnya. Nilai LRD yang rendah menunjukkan bahwa cluster terdekat berada jauh dari titik tersebut.</p></li>
+</ol>
+<p>4.Local Outlier Factor (LOF) adalah ukuran yang digunakan untuk mengidentifikasi pencilan (outlier) dalam data. Ini dilakukan dengan membandingkan rata-rata Local Reachability Density (LRD) dari K tetangga suatu titik dengan LRD dari titik tersebut sendiri.</p>
+<img src="image-20240321-043238.png" width="" align="" /><p>Jika sebuah titik adalah bagian dari data yang umum (inlier), rata-rata LRD dari tetangganya akan hampir sama dengan LRD dari titik itu sendiri (karena kepadatan titik dan tetangganya hampir sama). Dalam hal ini, LOF akan mendekati 1. Namun, jika sebuah titik adalah pencilan, LRD dari titik tersebut akan lebih rendah daripada rata-rata LRD dari tetangganya. Hal ini akan menghasilkan nilai LOF yang tinggi.</p>
+<img src="image-20240321-043256.png" width="" align="" /><p>Umumnya, ketika nilai LOF &gt; 1, titik tersebut dianggap sebagai pencilan. Namun, ini tidak selalu benar. Misalnya, jika kita mengetahui bahwa hanya ada satu pencilan dalam data, kita dapat mengambil nilai LOF maksimum dari semua titik dan mempertimbangkan titik yang sesuai dengan nilai LOF maksimum tersebut sebagai pencilan.</p>
+</section>
+<section id="menghitung-manual-lokal-outlier-factor">
+<h2>menghitung manual lokal Outlier Factor<a class="headerlink" href="#menghitung-manual-lokal-outlier-factor" title="Link to this heading">#</a></h2>
+<p>data contoh data dengan tipe numeric 3 fitur jumlah data k=3 p=2 (euclidian distance)</p>
+<p>untuk Contoh data dengan tipe numerik memiliki 3 fitur, yakni lebar, tinggi, dan luas, dengan total 10 entri data. Untuk perhitungan Local Outlier Factor (LOF) secara manual dengan parameter k=3 p=2,
+langkah-langkahnya adalah sebagai berikut:</p>
+<ol class="arabic simple">
+<li><p>Menghitung jarak dan menentukan tetangga.
+2.Menghitung Reachability Distance (RD).</p></li>
+<li><p>Menghitung Local Reachability Distance (LRD).</p></li>
+<li><p>Menghitung Local Outlier Factor (LOF).
+Ayo kita pilih data yang akan digunakan untuk perhitungan ini.</p></li>
+</ol>
+<p>Menghitung jarak dan menentukan tetangga. menggunakan rumus dibawah ini</p>
+<img src="image-20240321-044701.png" width="" align="" /><img src="image-20240321-044728.png" width="" align="" /><ol class="arabic simple" start="2">
+<li><p>Menghitung Reachability Distance (RD).</p></li>
+</ol>
+<p>Sebelum menghitung nilai Reachability Distance dari setiap objek, kita perlu menentukan berapa banyak objek yang akan menjadi tetangga ke-n dari suatu objek. Secara matematis, langkah ini dapat dijelaskan sebagai berikut:
+Misalkan kita memiliki sebuah objek p yang merupakan pusat dari ruang lingkup tetangga. Jumlah tetangga yang akan dipertimbangkan ditentukan oleh parameter k, yang merupakan jumlah tetangga yang ingin dipertimbangkan.</p>
+<p>Selanjutnya hitung Reachability Distance dari maring-masing objek, untuk rumusnya yaitu :</p>
+<ol class="arabic simple" start="3">
+<li><p>Menghitung Local Reachability Distance (LRD)</p></li>
+</ol>
+<p>Selanjutnya melakukan perhitungan Local Reachability Distance (LRD), LRD dirumuskan seperti di bawah ini :</p>
+<p>rumus dari LRD merupakan hasil dari pembagian banyak jumlah tetangga ke-n dari suatu objek dibagi dengan total dari reachdistance ability objek tersebut.</p>
+<p>Sehinga jika dilakukan perhitungan untuk setiap objek menghasilkan</p>
+<ol class="arabic simple" start="4">
+<li><p>Menghitung Local Outlier Factor (LOF)</p></li>
+</ol>
+<p>Selanjutnya yang terakhir yaitu menghitung Local Outlier Factor (LOF), dirumuskan sebagai berikut :</p>
+<p>rumus diatas untuk mendapat hasil LOF,  jika LOF didapat dari hasil perkalian jumlah nilai lrd suatu objek dikali dengan jumlah reachability distance suatu objek.</p>
+</section>
+<section id="menghitung-menggunakan-python-scikit-learn">
+<h2>menghitung menggunakan python (Scikit Learn)<a class="headerlink" href="#menghitung-menggunakan-python-scikit-learn" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">LocalOutlierFactor</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span> <span class="p">[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">],</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">11</span><span class="p">]]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">LocalOutlierFactor</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">contamination</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> 
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">outlier_mask</span> <span class="o">=</span> <span class="n">y_pred</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Data Points&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">outlier_mask</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">outlier_mask</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Outliers&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Local Outlier Factor (LOF)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Feature 1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Feature 2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/42d8a1435223553cf9876d6b159a79c7baf94fe3e8fbb6774f6d3ce9c6db3597.png" src="_images/42d8a1435223553cf9876d6b159a79c7baf94fe3e8fbb6774f6d3ce9c6db3597.png" />
+</div>
+</div>
+</section>
+<section id="implementasi-local-outlier-factor-pada-data-iris">
+<h2>Implementasi local outlier factor pada data iris<a class="headerlink" href="#implementasi-local-outlier-factor-pada-data-iris" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pymysql</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">LocalOutlierFactor</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+    <span class="n">host</span><span class="o">=</span><span class="s2">&quot;datamining1-muhtar22140.a.aivencloud.com&quot;</span><span class="p">,</span>
+    <span class="n">port</span> <span class="o">=</span> <span class="mi">24703</span><span class="p">,</span>
+    <span class="n">user</span><span class="o">=</span><span class="s2">&quot;avnadmin&quot;</span><span class="p">,</span>
+    <span class="n">password</span><span class="o">=</span><span class="s2">&quot;AVNS_aK6n6H3LdnwcGKYslzc&quot;</span><span class="p">,</span>
+    <span class="n">database</span><span class="o">=</span><span class="s2">&quot;irissi&quot;</span>
+<span class="p">)</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT SepalLengthCm, SepalWidthCm, PetalLengthCm, PetalWidthCm FROM iris&quot;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="n">lof</span> <span class="o">=</span> <span class="n">LocalOutlierFactor</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">contamination</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">lof</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Local Outlier Factor (LOF)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Sepal Length&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Sepal Width&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/27a36b802469e399aec7cb555ce632270bbbf7c64f92f9e896c45ecf33ecd56d.png" src="_images/27a36b802469e399aec7cb555ce632270bbbf7c64f92f9e896c45ecf33ecd56d.png" />
+</div>
+</div>
+<section id="data-integration">
+<h3>Data integration<a class="headerlink" href="#data-integration" title="Link to this heading">#</a></h3>
+<p>data melibatkan penggabungan data dari berbagai sumber, Anda perlu memastikan bahwa semua data tersebut memiliki format yang seragam. Ini adalah langkah penting dalam proses ini.</p>
+<p>Beberapa masalah dapat muncul saat mengintegrasikan data. Contohnya, jika Anda ingin menggabungkan data dari beberapa sumber, Anda harus memperhatikan bahwa data dari sumber pertama milik orang A, dan data dari sumber kedua juga terkait dengan orang A. Meskipun terdengar sederhana, kenyataannya dua sumber tersebut mungkin memiliki format yang berbeda, sehingga membuat integrasi data sedikit lebih rumit.</p>
+<p>Mengambil data dari berbagai sumber (MySql dan PostgreSql):</p>
+<a style='text-decoration:none;line-height:16px;display:flex;color:#5B5B62;padding:10px;justify-content:end;' href='https://deepnote.com?utm_source=created-in-deepnote-cell&projectId=8e1e8c70-34d2-4c89-ba78-30a9dce1fd3e' target="_blank">
+<img alt='Created in deepnote.com' style='display:inline;max-height:16px;margin:0px;margin-right:7.5px;' src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgODAgODAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU0LjEgKDc2NDkwKSAtIGh0dHBzOi8vc2tldGNoYXBwLmNvbSAtLT4KICAgIDx0aXRsZT5Hcm91cCAzPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IkxhbmRpbmciIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJBcnRib2FyZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEyMzUuMDAwMDAwLCAtNzkuMDAwMDAwKSI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cC0zIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjM1LjAwMDAwMCwgNzkuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8cG9seWdvbiBpZD0iUGF0aC0yMCIgZmlsbD0iIzAyNjVCNCIgcG9pbnRzPSIyLjM3NjIzNzYyIDgwIDM4LjA0NzY2NjcgODAgNTcuODIxNzgyMiA3My44MDU3NTkyIDU3LjgyMTc4MjIgMzIuNzU5MjczOSAzOS4xNDAyMjc4IDMxLjY4MzE2ODMiPjwvcG9seWdvbj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zNS4wMDc3MTgsODAgQzQyLjkwNjIwMDcsNzYuNDU0OTM1OCA0Ny41NjQ5MTY3LDcxLjU0MjI2NzEgNDguOTgzODY2LDY1LjI2MTk5MzkgQzUxLjExMjI4OTksNTUuODQxNTg0MiA0MS42NzcxNzk1LDQ5LjIxMjIyODQgMjUuNjIzOTg0Niw0OS4yMTIyMjg0IEMyNS40ODQ5Mjg5LDQ5LjEyNjg0NDggMjkuODI2MTI5Niw0My4yODM4MjQ4IDM4LjY0NzU4NjksMzEuNjgzMTY4MyBMNzIuODcxMjg3MSwzMi41NTQ0MjUgTDY1LjI4MDk3Myw2Ny42NzYzNDIxIEw1MS4xMTIyODk5LDc3LjM3NjE0NCBMMzUuMDA3NzE4LDgwIFoiIGlkPSJQYXRoLTIyIiBmaWxsPSIjMDAyODY4Ij48L3BhdGg+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwzNy43MzA0NDA1IEwyNy4xMTQ1MzcsMC4yNTcxMTE0MzYgQzYyLjM3MTUxMjMsLTEuOTkwNzE3MDEgODAsMTAuNTAwMzkyNyA4MCwzNy43MzA0NDA1IEM4MCw2NC45NjA0ODgyIDY0Ljc3NjUwMzgsNzkuMDUwMzQxNCAzNC4zMjk1MTEzLDgwIEM0Ny4wNTUzNDg5LDc3LjU2NzA4MDggNTMuNDE4MjY3Nyw3MC4zMTM2MTAzIDUzLjQxODI2NzcsNTguMjM5NTg4NSBDNTMuNDE4MjY3Nyw0MC4xMjg1NTU3IDM2LjMwMzk1NDQsMzcuNzMwNDQwNSAyNS4yMjc0MTcsMzcuNzMwNDQwNSBDMTcuODQzMDU4NiwzNy43MzA0NDA1IDkuNDMzOTE5NjYsMzcuNzMwNDQwNSAwLDM3LjczMDQ0MDUgWiIgaWQ9IlBhdGgtMTkiIGZpbGw9IiMzNzkzRUYiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+' > </img>
+Created in <span style='font-weight:600;margin-left:4px;'>Deepnote</span></a></section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="notebooks.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Content with notebooks</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="markdown-notebooks.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Notebooks with MyST Markdown</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">memahami data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengumpulkan-data">Mengumpulkan Data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membuat-database-cloud-di-aiven">membuat database cloud di aiven</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mengumpulkan-data-di-mysql-dan-postgres">mengumpulkan data di mysql dan postgres</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fitur-fitur-pada-iris">fitur fitur pada iris</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#species">Species</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-missing-value">implementasi missing value</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-missing-value">pengertian missing value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menggunakan-rata-rata">menggunakan rata rata</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menggunakan-knn">menggunakan knn</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-knn">pengertian knn</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proses-mencari-missing-value-metode-knn">proses mencari missing value metode knn</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-outlier-lokal-outlier-factor">Deteksi Outlier (lokal Outlier Factor)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konseplokal-outlier-faktor">konseplokal outlier faktor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-manual-lokal-outlier-factor">menghitung manual lokal Outlier Factor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-menggunakan-python-scikit-learn">menghitung menggunakan python (Scikit Learn)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-local-outlier-factor-pada-data-iris">Implementasi local outlier factor pada data iris</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-integration">Data integration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
